@@ -18,6 +18,10 @@ Route::get('/',function(){
     return Storage::disk('s3')->allFiles('');
 });
 
+Route::get('/save',function(){
+    return Storage::disk('s3')->put('./test.svg', file_get_contents('test.svg'));
+});
+
 //Route::get('/', function () {
 //    return view('welcome');
 //});
